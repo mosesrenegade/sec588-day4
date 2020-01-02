@@ -1,15 +1,7 @@
-sudo: required
-
 language: node_js
 
 services:
   - docker
-
-before_install:
-  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-  - sudo apt-get update
-  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
 
 install:
   - echo "install nothing!" # put your normal pre-testing installs here
@@ -21,7 +13,7 @@ after_success:
   - docker --version
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
-  - eval $(aws ecr get-login --region us-east-1)
+  - eval "$(aws ecr get-login --no-include-email --region us-east-1)"
   - docker build -t helpfulapp .
   - docker tag helpfulapp:latest 310090471142.dkr.ecr.us-east-1.amazonaws.com/helpfulapp:latest
   - docker push 310090471142.dkr.ecr.us-east-1.amazonaws.com/helpfulapp:latest
