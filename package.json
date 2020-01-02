@@ -1,0 +1,22 @@
+{
+  "name": "helpfulapp",
+  "version": "1.0.0",
+  "description": "Day4",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mosesrenegade/sec588-day4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mosesrenegade/sec588-day4/issues"
+  },
+  "homepage": "https://github.com/mosesrenegade/sec588-day4#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
