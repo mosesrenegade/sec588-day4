@@ -1,11 +1,11 @@
 FROM node:8-jessie
 
-WORKDIR /src
-ADD . .
-#RUN mv docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh 
-RUN chmod 777 /usr/local/bin/docker-entrypoint.sh
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+WORKDIR /home/node/app
+COPY package*.json ./
+USER node
 RUN npm install
+COPY --chown=node:node . .
 
 EXPOSE 3000
-CMD ["npm", "start"]
-
+CMD ["node", "app.js"]
