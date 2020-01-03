@@ -1,0 +1,6 @@
+[
+  {
+    "name": "helpful-app",
+    "imageUri": "310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp:latest"
+  }
+]
