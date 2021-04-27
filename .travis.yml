@@ -12,6 +12,7 @@ install:
 
 script:
   - echo "no tests!" # put your normal testing scripts here
+  - echo "stef comment"
 
 after_success:
   - docker --version
