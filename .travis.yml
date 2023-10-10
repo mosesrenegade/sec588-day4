@@ -8,7 +8,7 @@ services:
   - docker
 
 install:
-  - echo "install nothing!" # put your normal pre-testing installs here
+  - echo "icnstall nothing!" # put your normal pre-testing installs here
 
 script:
   - echo "no tests!" # put your normal testing scripts here
